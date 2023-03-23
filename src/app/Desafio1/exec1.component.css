@@ -1,0 +1,12 @@
+.ativo{
+  background-color: #11c753;
+  color: black;
+  font-size: 10px;
+}
+.desativo{
+  background-color: #1c1c1c;
+  color: white;
+  font-size: 16px;
+
+}
+

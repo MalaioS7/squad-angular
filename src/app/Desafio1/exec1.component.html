@@ -1,0 +1,76 @@
+
+<!-- DESAFIO 1 -->
+<h1>DESAFIO1</h1>
+
+<!-- 1º -->
+<div *ngIf="mostrarlista">
+</div>
+<div *ngIf="!mostrarlista">
+  1 - Crie um botão que controle quando algum elemento que deve aparecer na tela ou não
+</div>
+<button (click)="OnMostrarlista()">Clique Aqui</button>
+
+<br>
+<br>
+
+<!-- 2º -->
+<p>2 - Criar uma lista com qualquer informação e exibir ela na tela</p>
+<ul>
+  <li *ngFor="let linguagens of lista2, let i=index">
+    {{ i+1 }}ºLinguagem aprendida - {{ linguagens}}
+  </li>
+</ul>
+
+<br>
+<br>
+
+<!-- 3º -->
+<p>3 - Usar o ngStyle e ngClass pra colocar algum estilo em qualquer elemento</p>
+<button
+  [ngStyle]="{
+    'backgroundColor': (ativo ? '#11c75e' : '#1c1c1c'),
+    'color': (ativo ? 'black' : 'white'),
+    'fontSize': (ativo ? '16px' : '10px')
+  }"
+  (click)="AlterarAtivo()"
+>*ngStyle
+</button>
+
+<button
+  [ngClass]="{
+    'backgroundColor': (ativo ? '#1c1c1c' : '#11c75e'),
+    'color': (ativo ? 'white' : 'black' ),
+    'fontSize': (ativo ? '16px' :'10px')
+  }" (click)="AlterarAtivo()"
+>INVERTE</button>
+
+<button
+  [ngClass]="{
+    ativo: !ativo,
+    desativo : ativo
+  }" (click)="AlterarAtivo()"
+>*ngClass</button>
+
+<br>
+<br>
+
+<!-- 4º -->
+<p>4 - Usar o ngSwitch/ngSwitchCase/ngSwitchDefault para tratar qualquer condição que vocês quiserem</p>
+<div>
+  <a href="#" [class.active]="link == 'test1'" (click)="link = 'test1'">Teste1</a>
+  <a href="#" [class.active]="link == 'test2'" (click)="link = 'test2'">Teste2</a>
+  <a href="#" [class.active]="link == 'test3'" (click)="link = 'test3'">Teste3</a>
+</div>
+
+<div class="container" [ngSwitch]="link">
+  <p *ngSwitchCase="'test1'">Teste1 foi ativado</p>
+  <p *ngSwitchCase="'test2'">Teste2 foi lançado</p>
+  <p *ngSwitchDefault="'test3'">Teste3 foi desativado</p>
+</div>
+
+<br>
+<br>
+
+<!-- 45-->
+<p>5 - Criar a sua própria diretiva customizada (Diretiva de atributo)</p>
+

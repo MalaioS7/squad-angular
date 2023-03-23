@@ -1,0 +1,23 @@
+<br>
+<br>
+<h2>Diretiva ngSwitch</h2>
+
+<nav class="navbar-nav navbar-light bg-faded">
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" >HOME</a> <span class="sr-only"></span>
+    <a class="nav-item nav-link" >Mapa</a>
+    <a class="nav-item nav-link" >Lista</a>
+  </div>
+
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" href="#" [class.active]="aba == 'home'" (click)="aba == 'home'">Home <span class="sr-only"></span></a>
+    <a class="nav-item nav-link" href="#" [class.active]="aba == 'mapa'" (click)="aba == 'mapa'">MAPA</a>
+    <a class="nav-item nav-link" href="#" [class.active]="aba == 'lista'" (click)="aba == 'lista'">LISTA</a>
+  </div>
+</nav>
+
+<div class="container" [ngSwitch]="">
+  <p *ngSwitchCase="'mapa'">Modo Mapa ativado</p>
+  <p *ngSwitchCase="'lista'">Modo Lista ativado</p>
+  <p *ngSwitchDefault>HOME</p>
+</div>

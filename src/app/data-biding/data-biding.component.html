@@ -1,0 +1,59 @@
+
+
+<br>
+<br>
+<br>
+<br>
+<hr>
+<br>
+<h2>DATA-BIDING</h2>
+
+<section class="property-biding">
+
+  <article>
+    <h3>Interpolação</h3>
+    <p>String reinderizada com interpolação {{ url }}</p>
+    <p>Resultado de 1+1 é:  {{ 1+1 }}</p>
+    <p>Resultado de 1+1 não é {{ 1+1 + getValor()}}</p>
+    <p>Estou gostando do Angular? {{ getCurtiCurso() }}</p>
+  </article>
+
+  <br>
+  <article>
+    <h3>Property Biding</h3>
+    <img src="{{ urlimg }}" alt="imagem" width="25%"><br>
+    <img [src]="urlimg" alt="imagem" width="25%">
+  </article>
+
+  <br>
+  <br>
+  <article>
+    <h3>Class e Style Biding</h3>
+    <div>
+      Selecione uma classe:
+      <select #classe (change)="0">
+        <option value="alert-sucess">Sucesso</option>
+        <option value="alert-info">Info</option>
+        <option value="alert-warning">Alerta</option>
+        <option value="alert-danger">Erro</option>
+      </select>
+      <br>
+      <br>
+
+      <div class="bg-success p-2 text-white">Sucesso</div>
+      <div class="bg-success p-2 text-white bg-opacity-75">Info</div>
+      <div class="bg-success p-2 text-dark bg-opacity-50">Alerta</div>
+      <div class="bg-success p-2 text-dark bg-opacity-25">Erro</div>
+
+      <p role="alert" class="alert" [class.alert-sucess]="classe.value == 'alert-sucess'">Sucesso</p>
+      <p role="alert" class="alert">Info</p>
+      <p role="alert" class="alert">Alerta</p>
+      <p role="alert" class="alert">Erro</p>
+    </div>
+  </article>
+
+</section>
+style='background-color: rgba(240, 240, 100, 0.763)'
+style='background-color: rgba(100, 240, 235, 0.763)'
+style='background-color: rgba(100, 240, 165, 0.763)'
+style='background-color: rgba(240, 100, 100, 0.763)'
