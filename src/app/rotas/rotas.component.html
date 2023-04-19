@@ -1,0 +1,15 @@
+<br><br>
+<hr>
+<h1>Rotas</h1>
+
+<nav>
+  <a routerLink="/"></a>
+  <a routerLink="/home">Home</a><br>
+  <a routerLink="/login">Login</a><br>
+  <a [routerLink]="['curso-detalhe', idCurso.value]">Páginas com parâmetro dinâmico</a>
+</nav>
+
+<div class="container">
+  <p>Informe um ID:</p><input #idCurso>
+  <router-outlet></router-outlet>
+</div>
